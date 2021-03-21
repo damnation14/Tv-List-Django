@@ -17,7 +17,16 @@ def home(request):
             tmdb_tv={'tvshows':search.results}
             return render(request, 'movies/home.html',tmdb_tv)
         else:
-            return render(request, 'movies/home.html',{})
+            trending=tmdb.Discover()
+            response=trending.tv(vote_average=8)
+            tmdb_tv={'tvshows':trending.results}
+            return render(request, 'movies/home.html',tmdb_tv)
+    else:
+        trending=tmdb.Trending()
+        response=trending.tv()
+        tmdb_tv={'tvshows':trending.results}
+        return render(request, 'movies/home.html',tmdb_tv)
+
 
 def tvdetails(request,id):
     if request.method=='GET' :
