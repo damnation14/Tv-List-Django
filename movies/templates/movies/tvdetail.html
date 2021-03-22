@@ -11,8 +11,13 @@
           <p class="card-text">{{tvshow.overview}}</p>
           <p class="card-text">Seasons: {{tvshow.number_of_seasons}}</p>
           <p class="card-text">Episodes: {{tvshow.number_of_episodes}}</p>
+          {% if user.is_authenticated %}
           <a role="button" href="{% url 'tv-watching' tvshow.id %}" type="button" class="btn btn-outline-danger">Watching!</a>
           <a role="button" href="{% url 'tv-watched' tvshow.id %}"class="btn btn-outline-dark">Completed!</a>
+          {%else%} 
+          <a role="button" href="{% url 'login' %}" type="button" class="btn btn-outline-danger">Watching!</a>
+          <a role="button" href="{% url 'login' %}"class="btn btn-outline-dark">Completed!</a>
+          {% endif %}
         </div>
       </div>
     </div>
