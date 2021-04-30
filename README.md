@@ -1,5 +1,5 @@
 # TvList
-A website showing a list of TV shows. You can add or remove the TV shows from the watching list. Completed list displays the TV shows that you've finished watching.
+A Django website showing a list of TV shows. You can add or remove the TV shows from the watching list. Completed list displays the TV shows that you've finished watching.
 
 # Features
 - User authentication.
